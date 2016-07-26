@@ -1,11 +1,14 @@
 import React from 'react';
+import Counter from '../container/counter';
+import Controls from '../container/controls';
 
 
 // function based "dumb" component with no state
 const Welcome = () => {
   return (
     <div>
-      react+react-router+webpack+babel+eslint starter
+      <Counter />
+      <Controls />
     </div>
   );
 };
