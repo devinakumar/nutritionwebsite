@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions/';
 
-// const ROOT_URL = 'https://cs52-blog.herokuapp.com/api';
+// const ROOT_URL = 'https://cs52-devinahw4.surge.sh';
+// const ROOT_URL = 'https://cs52-devinahw4.surge.sh';
 
 class Home extends Component {
   constructor(props) {
@@ -16,13 +17,13 @@ class Home extends Component {
   }
   listView() {
     return this.props.posts.map((post) => {
-      return <li><a href={`http://localhost:8080/posts/${post.id}`}>{post.title}</a></li>;
+      return <li key={post.id}><a href={`/posts/${post.id}`}>{post.title}</a></li>;
     });
   }
   render() {
     return (
       <div>
-        <h1>Devinas Blog</h1>
+        <h1>Life of Devina</h1>
           {this.listView()}
       </div>
     );

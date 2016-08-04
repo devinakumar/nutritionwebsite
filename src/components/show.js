@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions/';
+import marked from 'marked';
+import Textarea from 'react-textarea-autosize';
 
 class Show extends Component {
   constructor(props) {
@@ -11,7 +13,9 @@ class Show extends Component {
       editing: false,
     };
     this.onEditPost = this.onEditPost.bind(this);
-    this.onEditing = this.onEditing.bind(this);
+    this.onEditingTitle = this.onEditingTitle.bind(this);
+    this.onEditingContent = this.onEditingContent.bind(this);
+    this.onEditingTags = this.onEditingTags.bind(this);
     this.onDeletePost = this.onDeletePost.bind(this);
   }
 
@@ -22,8 +26,14 @@ class Show extends Component {
   onDeletePost() {
     this.props.deletePost(this.props.params.id);
   }
-  onEditing(event) {
+  onEditingTitle(event) {
+    this.props.updatePost(this.props.params.id, { title: event.target.value });
+  }
+  onEditingContent(event) {
     this.props.updatePost(this.props.params.id, { content: event.target.value });
+  }
+  onEditingTags(event) {
+    this.props.updatePost(this.props.params.id, { tags: event.target.value });
   }
   onEditPost() {
     this.setState({ editing: !this.state.editing });
@@ -39,9 +49,24 @@ class Show extends Component {
 
   renderPost() {
     if (this.state.editing) {
-      return <input value={this.props.currentPost.content} onChange={this.onEditing} />;
+      return (
+        <div id="edit-form">
+          <div>
+            <h2>title:</h2>
+            <input value={this.props.currentPost.title} onChange={this.onEditingTitle} />
+          </div>
+          <div>
+            <h2>content:</h2>
+            <Textarea minRows={4} value={this.props.currentPost.content} onChange={this.onEditingContent} />;
+          </div>
+          <div>
+            <h2>tags:</h2>
+            <input value={this.props.currentPost.tags} onChange={this.onEditingTags} />
+          </div>
+        </div>
+      );
     } else {
-      return <div>{this.props.currentPost.content}</div>;
+      return <div className="noteBody" dangerouslySetInnerHTML={{ __html: marked(this.props.currentPost.content || '') }} />;
     }
   }
 

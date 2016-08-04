@@ -24,3 +24,11 @@ body {
     word-wrap: normal;
   }
 }
+#edit-form {
+  display: flex;
+  flex-direction: column;
+}
+#edit-line {
+  display: flex;
+  flex-direction: row;
+}
