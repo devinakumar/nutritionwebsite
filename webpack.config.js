@@ -1,6 +1,6 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-
 const autoprefixer = require('autoprefixer');
+const webpack = require('webpack');
 
 module.exports = {
   stats: { colors: true },
@@ -33,6 +33,11 @@ module.exports = {
   postcss: [autoprefixer({ browsers: ['last 2 versions'] })],
   plugins: [
     new ExtractTextPlugin('bundle.css'),
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('production'),
+      },
+    }),
   ],
 
 };
