@@ -66,7 +66,15 @@ class Show extends Component {
         </div>
       );
     } else {
-      return <div className="noteBody" dangerouslySetInnerHTML={{ __html: marked(this.props.currentPost.content || '') }} />;
+      return (
+        <div>
+          <div className="noteBody" dangerouslySetInnerHTML={{ __html: marked(this.props.currentPost.content || '') }} />
+          <div>
+            <h4>tags:</h4>
+            {this.props.currentPost.tags}
+          </div>
+        </div>
+      );
     }
   }
 
