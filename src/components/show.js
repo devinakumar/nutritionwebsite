@@ -88,7 +88,7 @@ class Show extends Component {
         {this.renderPost()}
         <div id="buttons">
           {this.editButton()}
-          <input type="button" value="Delete post!" onClick={this.onDeletePost} />
+          <i onClick={this.onDeletePost} className="fa fa-trash" aria-hidden="true"></i>
         </div>
       </div>
     );
