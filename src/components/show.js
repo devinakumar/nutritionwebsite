@@ -41,9 +41,9 @@ class Show extends Component {
 
   editButton() {
     if (this.state.editing) {
-      return <input type="button" value=" Done editing!" onClick={this.onEditPost} />;
+      return <i onClick={this.onEditPost} className="fa fa-check" aria-hidden="true"></i>;
     } else {
-      return <input type="button" value="Edit post!" onClick={this.onEditPost} />;
+      return <i onClick={this.onEditPost} className="fa fa-pencil" aria-hidden="true"></i>;
     }
   }
 
@@ -69,7 +69,7 @@ class Show extends Component {
       return (
         <div>
           <div className="noteBody" dangerouslySetInnerHTML={{ __html: marked(this.props.currentPost.content || '') }} />
-          <div>
+          <div id="tags">
             <h4>tags:</h4>
             {this.props.currentPost.tags}
           </div>
@@ -86,9 +86,9 @@ class Show extends Component {
       <div>
         <h1>{this.props.currentPost.title}</h1>
         {this.renderPost()}
-        <div>
+        <div id="buttons">
           {this.editButton()}
-          <input type="button" value="Delete post!" onClick={this.onDeletePost} />
+          <i onClick={this.onDeletePost} className="fa fa-trash" aria-hidden="true"></i>
         </div>
       </div>
     );
