@@ -23,8 +23,12 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <h1>Life of Devina</h1>
+        <div id="title">
+          <h1>Life of Devina</h1>
+        </div>
+        <div id="listview">
           {this.listView()}
+        </div>
       </div>
     );
   }
