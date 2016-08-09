@@ -41,9 +41,9 @@ class Show extends Component {
 
   editButton() {
     if (this.state.editing) {
-      return <input type="button" value=" Done editing!" onClick={this.onEditPost} />;
+      return <i onClick={this.onEditPost} className="fa fa-check" aria-hidden="true"></i>;
     } else {
-      return <input type="button" value="Edit post!" onClick={this.onEditPost} />;
+      return <i onClick={this.onEditPost} className="fa fa-pencil" aria-hidden="true"></i>;
     }
   }
 
