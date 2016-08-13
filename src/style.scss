@@ -30,6 +30,7 @@ body {
     background-color: white;
     margin: 1vh;
     text-overflow: inherit;
+    font-size: 2.5vw;
   }
 }
 
@@ -125,5 +126,31 @@ body {
   i {
     color: black;
     padding-right: 2vw;
+  }
+}
+#sign-out-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 10vw;
+  a {
+    text-decoration: none;
+    color: black;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    border-color: black;
+    border-style: solid;
+    background-color: white;
+    margin: 1vh;
+    text-overflow: inherit;
+    font-size: 2.5vw;
+  }
+}
+#sign-out-content {
+  h2 {
+    background-color: rgba(128, 203, 196, .8);
   }
 }

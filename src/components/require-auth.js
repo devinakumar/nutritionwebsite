@@ -5,12 +5,12 @@ import { browserHistory } from 'react-router';
 export default function (ComposedComponent) {
   class RequireAuth extends Component {
     componentWillMount() {
-      if (!this.props.authenticated) {
+      if (!this.props.auth) {
         browserHistory.push('/signin');
       }
     }
     componentWillUpdate(nextProps) {
-      if (!nextProps.authenticated) {
+      if (!nextProps.auth) {
         browserHistory.push('/signin');
       }
     }

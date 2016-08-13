@@ -48,7 +48,7 @@ class SignUp extends Component {
           <input placeholder="Username" onChange={this.onNewUsernameChange} value={this.state.username} />
         </form>
         <form>
-          <input type="button" value="Sign Up!" onClick={this.onSignIn} />
+          <input type="button" value="Sign Up!" onClick={this.onSignUp} />
         </form>
       </div>
     );

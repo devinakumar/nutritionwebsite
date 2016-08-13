@@ -10,7 +10,7 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 import reducers from './reducers';
 import thunk from 'redux-thunk';
-import * as ActionTypes from './actions/index';
+import { ActionTypes } from './actions';
 
 // this creates the store with the reducers, and does some other stuff to initialize devtools
 const store = createStore(reducers, {}, compose(

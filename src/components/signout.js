@@ -18,14 +18,17 @@ class SignOut extends Component {
   }
   render() {
     return (
-      <div id="navbar">
-        <div>
-          <Link to="/">No!</Link>
-        </div>
-        <div>
-          <form>
-            <input type="button" value="Yes" onClick={this.onSignOut} />
-          </form>
+      <div id="sign-out-content">
+        <h2>Are you sure you want to sign out?</h2>
+        <div id="sign-out-buttons">
+          <div>
+            <Link to="/">No!</Link>
+          </div>
+          <div>
+            <form>
+              <input type="button" value="Fine, I'll leave." onClick={this.onSignOut} />
+            </form>
+          </div>
         </div>
       </div>
     );
