@@ -14,14 +14,22 @@ body {
   font-style: italic;
   font-weight: bold;
   color: white;
+  margin: 2vh;
+  flex-wrap: wrap;
+  text-overflow: inherit;
 
   a {
     text-decoration: none;
     color: black;
-    padding: 10px;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
     border-color: black;
     border-style: solid;
     background-color: white;
+    margin: 1vh;
+    text-overflow: inherit;
   }
 }
 
@@ -29,10 +37,16 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  color: black;
+  border-style: solid;
+  background-color: rgba(255, 255, 255, .2);
+  margin: 1vh;
   h1 {
     font-style: italic;
     align-items: center;
     font-weight: bold;
+    font-size: 5vw;
+
   }
 }
 
@@ -40,10 +54,19 @@ body {
   font-size: 1.2em;
   li {
     list-style-type: none;
+    background-color: rgba(128, 203, 196, 1);
+    padding: 1vw;
+    margin: 1vw;
+  }
+  li:hover {
+    background-color: rgba(0, 121, 107, .5);
   }
   a {
     text-decoration: none;
     color: black;
+  }
+  a:hover {
+    color: white;
   }
 }
 #input-bar {
@@ -67,15 +90,38 @@ body {
   display: flex;
   flex-direction: row;
 }
+#note-title {
+  border-style: solid;
+  background-color: rgba(128, 203, 196, .8);
+  margin: 0px;
+  padding: 0px;
+}
+#note-body {
+  background-color: rgba(128, 203, 196, .8);
+  margin: 0px;
+}
 #tags {
   display: flex;
   flex-direction: row;
   align-items: center;
-  h4 {
+  background-color: rgba(128, 203, 196, .8);
+  margin: 0px;
+  h5 {
+    margin-right: 2vw;
+  }
+}
+#username {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: rgba(128, 203, 196, .8);
+  margin: 0px;
+  h5 {
     margin-right: 2vw;
   }
 }
 #buttons {
+  background-color: rgba(128, 203, 196, .8);
   i {
     color: black;
     padding-right: 2vw;

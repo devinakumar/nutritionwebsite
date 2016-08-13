@@ -12,6 +12,7 @@ class SignIn extends Component {
     };
     this.onEmailChange = this.onEmailChange.bind(this);
     this.onPasswordChange = this.onPasswordChange.bind(this);
+    this.onSignIn = this.onSignIn.bind(this);
   }
   onEmailChange(event) {
     console.log(event.target.value);

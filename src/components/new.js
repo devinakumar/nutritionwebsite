@@ -33,7 +33,7 @@ class New extends Component {
   }
   onCreate(event) {
     // this.props.onSubmit(this.state.notecontent);
-    this.props.createPost({ title: this.state.title, content: this.state.content, tags: this.state.tags });
+    this.props.createPost({ title: this.state.title, content: this.state.content, tags: this.state.tags, author: this.props.author });
   }
   render() {
     return (

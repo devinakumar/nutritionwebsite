@@ -68,10 +68,14 @@ class Show extends Component {
     } else {
       return (
         <div>
-          <div className="noteBody" dangerouslySetInnerHTML={{ __html: marked(this.props.currentPost.content || '') }} />
+          <div id="note-body">
+            <div className="noteBody" dangerouslySetInnerHTML={{ __html: marked(this.props.currentPost.content || '') }} />
+          </div>
           <div id="tags">
-            <h4>tags:</h4>
-            {this.props.currentPost.tags}
+            <h4>tags: {this.props.currentPost.tags}</h4>
+          </div>
+          <div id="username">
+          user: {this.props.currentPost.author}
           </div>
         </div>
       );
@@ -84,7 +88,9 @@ class Show extends Component {
     }
     return (
       <div>
-        <h1>{this.props.currentPost.title}</h1>
+        <div id="note-title">
+          <h1>{this.props.currentPost.title}</h1>
+        </div>
         {this.renderPost()}
         <div id="buttons">
           {this.editButton()}

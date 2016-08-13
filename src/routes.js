@@ -5,6 +5,7 @@ import Show from './components/show';
 import Home from './components/home';
 import SignIn from './components/signin';
 import SignUp from './components/signup';
+import SignOut from './components/signout';
 import RequireAuth from './components/require-auth';
 
 import App from './components/app';
@@ -16,5 +17,6 @@ export default(
     <Route path="posts/:id" component={Show} />
     <Route path="signin" component={SignIn} />
     <Route path="signup" component={SignUp} />
+    <Route path="signout" component={SignOut} />
   </Route>
 );

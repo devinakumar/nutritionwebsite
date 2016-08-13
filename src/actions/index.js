@@ -14,9 +14,16 @@ export const ActionTypes = {
 };
 
 // const ROOT_URL = 'https://cs52-blog.herokuapp.com/api';
-// const ROOT_URL = 'http://localhost:9090/api';
-const ROOT_URL = 'https://devinacs52hw5.herokuapp.com/api';
+const ROOT_URL = 'http://localhost:9090/api';
+// const ROOT_URL = 'https://devinacs52hw5.herokuapp.com/api';
 const API_KEY = '?key=devina_k';
+
+export function authError(error) {
+  return {
+    type: ActionTypes.AUTH_ERROR,
+    message: error,
+  };
+}
 
 export function fetchPosts() {
   // ActionCreator returns a function
@@ -85,22 +92,24 @@ export function deletePost(id) {
     });
   };
 }
-export function signinUser({ email, password }) {
+export function signinUser(user) {
   return (dispatch) => {
-    axios.post(`${ROOT_URL}/signin`).then(response => {
+    axios.post(`${ROOT_URL}/signin`, user).then(response => {
       dispatch({ type: ActionTypes.AUTH_USER });
       localStorage.setItem('token', response.data.token);
+      browserHistory.push('/');
     }).catch(error => {
       dispatch(authError(`Sign In Failed: ${error.response.data}`));
     });
   };
 }
 
-export function signupUser({ email, password }) {
+export function signupUser(user) {
   return (dispatch) => {
-    axios.post(`${ROOT_URL}/signup`).then(response => {
+    axios.post(`${ROOT_URL}/signup`, user).then(response => {
       dispatch({ type: ActionTypes.AUTH_USER });
       localStorage.setItem('token', response.data.token);
+      browserHistory.push('/');
     }).catch(error => {
       dispatch(authError(`Sign In Failed: ${error.response.data}`));
     });
@@ -120,9 +129,3 @@ export function signoutUser() {
 
 // trigger to deauth if there is error
 // can also use in your error reducer if you have one to display an error message
-export function authError(error) {
-  return {
-    type: ActionTypes.AUTH_ERROR,
-    message: error,
-  };
-}
