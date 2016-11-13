@@ -25,7 +25,7 @@ class Home extends Component {
     return (
       <div>
         <div id="title">
-          <h1>Life of Devina</h1>
+          <h1>Watson Nutrition</h1>
         </div>
         <div id="listview">
           {this.listView()}

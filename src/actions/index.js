@@ -53,11 +53,11 @@ export function fetchFoods() {
   };
 }
 
-export function fetchMeals(user) {
+export function fetchMeals() {
   // ActionCreator returns a function
   // that gets called with dispatch
   return (dispatch) => {
-    axios.get(`${ROOT_URL}/meal`, user).then(response => {
+    axios.get(`${ROOT_URL}/meal`, { headers: { authorization: localStorage.getItem('token') } }).then(response => {
       dispatch({ type: 'FETCH_MEALS', payload: response.data });
     }).then(response2 => {
       console.log(response2);

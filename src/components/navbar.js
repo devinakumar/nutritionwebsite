@@ -11,27 +11,26 @@ class NavBar extends Component {
     };
   }
 
-  onSignOut
   render() {
     return (
       <div id="navbar">
         <div>
-          <Link to="/">My site!</Link>
+          <Link to="/">home</Link>
         </div>
         <div>
-          <Link to="/posts/new">new post</Link>
+          <Link to="/posts/new">add meal</Link>
         </div>
         <div>
           <Link to="/stats">my stats</Link>
         </div>
         <div>
-          <Link to="/signin">Sign in!</Link>
+          <Link to="/signin">sign in</Link>
         </div>
         <div>
-          <Link to="/signup">Sign up!</Link>
+          <Link to="/signup">sign up</Link>
         </div>
         <div>
-          <Link to="/signout">Sign out</Link>
+          <Link to="/signout">sign out</Link>
         </div>
       </div>
     );
