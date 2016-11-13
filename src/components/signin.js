@@ -7,16 +7,16 @@ class SignIn extends Component {
     super(props);
 
     this.state = {
-      email: '',
+      phone: '',
       password: '',
     };
-    this.onEmailChange = this.onEmailChange.bind(this);
+    this.onPhoneChange = this.onPhoneChange.bind(this);
     this.onPasswordChange = this.onPasswordChange.bind(this);
     this.onSignIn = this.onSignIn.bind(this);
   }
-  onEmailChange(event) {
+  onPhoneChange(event) {
     console.log(event.target.value);
-    this.setState({ email: event.target.value });
+    this.setState({ phone: event.target.value });
     // this.props.onTextEdit(event.target.value);
   }
   onPasswordChange(event) {
@@ -26,13 +26,13 @@ class SignIn extends Component {
   }
   onSignIn(event) {
     // this.props.onSubmit(this.state.notecontent);
-    this.props.signinUser({ email: this.state.email, password: this.state.password });
+    this.props.signinUser({ phone: this.state.phone, password: this.state.password });
   }
   render() {
     return (
       <div id="input-bar">
         <form>
-          <input placeholder="Email" onChange={this.onEmailChange} value={this.state.email} />
+          <input placeholder="Email" onChange={this.onPhoneChange} value={this.state.phone} />
         </form>
         <form>
           <input placeholder="Password" onChange={this.onPasswordChange} value={this.state.password} />

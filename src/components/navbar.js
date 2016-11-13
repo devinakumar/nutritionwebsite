@@ -22,6 +22,9 @@ class NavBar extends Component {
           <Link to="/posts/new">new post</Link>
         </div>
         <div>
+          <Link to="/stats">my stats</Link>
+        </div>
+        <div>
           <Link to="/signin">Sign in!</Link>
         </div>
         <div>

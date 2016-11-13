@@ -7,18 +7,16 @@ class SignUp extends Component {
     super(props);
 
     this.state = {
-      email: '',
+      phone: '',
       password: '',
-      username: '',
     };
-    this.onNewEmailChange = this.onNewEmailChange.bind(this);
+    this.onNewPhoneChange = this.onNewPhoneChange.bind(this);
     this.onNewPasswordChange = this.onNewPasswordChange.bind(this);
-    this.onNewUsernameChange = this.onNewUsernameChange.bind(this);
     this.onSignUp = this.onSignUp.bind(this);
   }
-  onNewEmailChange(event) {
+  onNewPhoneChange(event) {
     console.log(event.target.value);
-    this.setState({ email: event.target.value });
+    this.setState({ phone: event.target.value });
     // this.props.onTextEdit(event.target.value);
   }
   onNewPasswordChange(event) {
@@ -26,26 +24,18 @@ class SignUp extends Component {
     this.setState({ password: event.target.value });
     // this.props.onTextEdit(event.target.value);
   }
-  onNewUsernameChange(event) {
-    console.log(event.target.value);
-    this.setState({ username: event.target.value });
-    // this.props.onTextEdit(event.target.value);
-  }
   onSignUp(event) {
     // this.props.onSubmit(this.state.notecontent);
-    this.props.signupUser({ email: this.state.email, password: this.state.password, username: this.state.username });
+    this.props.signupUser({ phone: this.state.phone, password: this.state.password });
   }
   render() {
     return (
       <div id="input-bar">
         <form>
-          <input placeholder="Email" onChange={this.onNewEmailChange} value={this.state.email} />
+          <input placeholder="Email" onChange={this.onNewPhoneChange} value={this.state.phone} />
         </form>
         <form>
           <input placeholder="Password" onChange={this.onNewPasswordChange} value={this.state.password} />
-        </form>
-        <form>
-          <input placeholder="Username" onChange={this.onNewUsernameChange} value={this.state.username} />
         </form>
         <form>
           <input type="button" value="Sign Up!" onClick={this.onSignUp} />
