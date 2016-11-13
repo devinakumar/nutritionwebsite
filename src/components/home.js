@@ -13,11 +13,16 @@ class Home extends Component {
     this.state = {};
   }
   componentWillMount() {
-    this.props.fetchPosts();
+    this.props.fetchFoods();
   }
+  // listView() {
+  //   return this.props.posts.map((post) => {
+  //     return <li key={post.id}><a href={`/posts/${post.id}`}>{post.title}</a></li>;
+  //   });
+  // }
   listView() {
-    return this.props.posts.map((post) => {
-      return <li key={post.id}><a href={`/posts/${post.id}`}>{post.title}</a></li>;
+    return this.props.foods.map((food) => {
+      return <li key={food.name}><a href={`/food/${food.name}`}>{food.name}</a></li>;
     });
   }
   render() {
@@ -39,6 +44,7 @@ const mapStateToProps = (state) => {
   return (
   {
     posts: state.posts.all,
+    foods: state.foods.all,
   }
   );
 };

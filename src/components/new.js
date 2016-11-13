@@ -65,6 +65,7 @@ const mapStateToProps = (state) => {
   return (
   {
     posts: state.posts.all,
+    foods: state.foods.all,
   }
   );
 };

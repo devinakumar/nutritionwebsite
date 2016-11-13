@@ -8,9 +8,11 @@ export const ActionTypes = {
   CREATE_POST: 'CREATE_POST',
   UPDATE_POST: 'UPDATE_POST',
   DELETE_POST: 'DELETE_POST',
+  FETCH_FOODS: 'FETCH_FOODS',
 };
 
-const ROOT_URL = 'https://cs52-blog.herokuapp.com/api';
+// const ROOT_URL = 'https://cs52-blog.herokuapp.com/api';
+const ROOT_URL = 'https://watsonnutrition.herokuapp.com/api';
 const API_KEY = '?key=devina_k';
 
 export function fetchPosts() {
@@ -26,7 +28,19 @@ export function fetchPosts() {
     });
   };
 }
+export function fetchFoods() {
+  // ActionCreator returns a function
+  // that gets called with dispatch
+  return (dispatch) => {
+    axios.get(`${ROOT_URL}/food`).then(response => {
+      dispatch({ type: 'FETCH_FOODS', payload: response.data });
 
+// do something with response.data  (some json)
+    }).catch(error => {
+// hit an error do something else!
+    });
+  };
+}
 export function createPost(post) {
   // ActionCreator returns a function
   // that gets called with dispatch
