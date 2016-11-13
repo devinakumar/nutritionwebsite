@@ -59,8 +59,6 @@ export function fetchMeals() {
   return (dispatch) => {
     axios.get(`${ROOT_URL}/meal`, { headers: { authorization: localStorage.getItem('token') } }).then(response => {
       dispatch({ type: 'FETCH_MEALS', payload: response.data });
-    }).then(response2 => {
-      console.log(response2);
     })
     .catch(error => {
       console.log('we hur');
