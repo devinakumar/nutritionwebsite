@@ -1,156 +1,323 @@
+/* BODY, MAIN STYLE */
+
 body {
-  font-family: "Roboto", sans-serif;
-  color: rgb(10%, 10%, 10%);
-  background-image: url(http://st.depositphotos.com/1010754/2033/v/950/depositphotos_20337999-Ethnic-paisley-pattern.jpg);
-  background-size: cover;
-  margin: 50px;
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  background-color: rgba(0,0,0,0.2);
 }
 
-#navbar {
+/* NAVIGATION BAR STYLE */
+
+nav {
+  background-color: rgba(0,0,0,0.4);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  font-size: 1.25em;
-  font-style: italic;
-  font-weight: bold;
-  color: white;
-  margin: 2vh;
-  flex-wrap: wrap;
-  text-overflow: inherit;
+  align-items: center;
+  padding-left: 15px;
+  padding-right: 15px;
+}
 
-  a {
-    text-decoration: none;
-    color: black;
-    padding-left: 2vw;
-    padding-right: 2vw;
-    padding-top: 1vh;
-    padding-bottom: 1vh;
-    border-color: black;
-    border-style: solid;
-    background-color: white;
-    margin: 1vh;
-    text-overflow: inherit;
-    font-size: 2.5vw;
+nav .emphasize {
+  color: rgba(0,0,0,0.5);
+}
+
+nav .title a {
+  color: rgba(20,40,255,0.5);
+  text-decoration: none;
+  font-family: 'Teko', sans-serif;
+  font-size: 2.5em;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style-type: none;
+}
+
+nav li {
+  display: inline;
+  padding-left: 25px;
+}
+
+nav li a {
+  color: rgba(0,0,0,0.8);
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+nav li a:hover {
+  background-color: rgba(0,0,0,0.1);
+}
+
+nav li a.sign_in {
+  border: 2px solid rgba(0,0,0,0.3);
+}
+
+nav li a.sign_in:hover {
+  border: 2px solid rgba(0,0,0,1);
+  background-color: rgba(0,0,0,0);
+}
+
+/* NAVIGATION BAR LESS THAN 790PX (SINCE THAT IS WHEN IT LOOKS WEIRD) */
+@media only screen and (max-width : 790px) {
+  nav {
+    padding-top: 5px;
+  }
+
+  nav li {
+    display: none;
+    padding: 0;
+  }
+
+  nav li.li_sign_in {
+    display: inline;
   }
 }
 
-#title {
+/* MAIN PAGE STYLE */
+
+#slogan {
+  font-size: 3em;
+  font-family: georgia;
+  text-align: center;
+  padding: 50px;
+}
+
+#homepageCharts {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 200px;
+  text-align: center;
+  padding-top: 50px;
+}
+
+#chart {
+  width: 33%;
+  text-align: center;
+}
+
+.signup_box {
+  align-self: center;
+  text-align: center;
+  width: auto;
+  max-width: 90%;
+}
+
+.signup_box h1 {
+  text-shadow: 1.5px 1.5px rgba(0,0,0,0.3);
+  font-size: 2.5em;
+}
+
+.signup_box a {
+  color: rgba(255,255,255,1);
+}
+
+.signup_form {
+  background-color: rgba(0,0,0,0.5);
+  padding: 30px;
+  margin: 30px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.signup_form_input {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  color: black;
-  border-style: solid;
-  background-color: rgba(255, 255, 255, .2);
-  margin: 1vh;
-  h1 {
-    font-style: italic;
+  text-align: center;
+}
+
+.signup_form_input input[type=text] {
+  font-size: 1.1em;
+  font-family: 'Open Sans';
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid rgba(0,0,0,0.5);
+  outline: 0;
+  width: 50%;
+  min-width: 120px;
+}
+
+.signup_form_input input[type=text]:focus {
+  outline: 0;
+  border: 1px solid rgba(0,255,255,0.5);
+}
+
+.signup_form_input button {
+  font-size: 1.1em;
+  margin-left: 4px;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-family: 'Open Sans';
+  border-radius: 4px;
+  border: none;
+  width: 20%;
+  min-width: 80px;
+  color: rgba(0,0,0,0.8);
+  background-color: rgba(0,255,255,0.8);
+}
+
+.signup_form_input button:hover {
+  color: rgba(0,0,0,0.9);
+  background-color: rgba(0,255,255,0.9);
+  cursor: pointer;
+}
+
+.signup_form_input button:focus {
+  outline: 0;
+}
+
+/* MAIN PAGE STYLE FOR LESS THAN 790PX */
+@media only screen and (max-width : 790px) {
+  .signup_box h1 {
+    padding-top: 30px;
+    color: rgba(0,0,0,1);
+    text-shadow: none;
+    font-size: 2em;
+  }
+
+  .signup_box p {
+    color: rgba(0,0,0,1);
+  }
+
+  .signup_form {
+    width: auto;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .signup_form p {
+    color: rgba(255,255,255,1);
+  }
+
+  .signup_form_input {
+    flex-direction: column;
     align-items: center;
-    font-weight: bold;
-    font-size: 5vw;
+  }
 
+  .signup_form_input input[type=text] {
+    width: 90%;
+    padding: 5px;
+    margin: 0;
+    margin-bottom: 5px;
+    border: none;
+  }
+
+  .signup_form_input button {
+    width: 92%;
+    padding: 5px;
+    margin: 0;
   }
 }
 
-#listview {
-  font-size: 1.2em;
-  li {
-    list-style-type: none;
-    background-color: rgba(128, 203, 196, 1);
-    padding: 1vw;
-    margin: 1vw;
-  }
-  li:hover {
-    background-color: rgba(0, 121, 107, .5);
-  }
-  a {
-    text-decoration: none;
-    color: black;
-  }
-  a:hover {
-    color: white;
-  }
-}
-#input-bar {
+/* FOOTER STYLE */
+
+footer {
   display: flex;
   flex-direction: column;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 1) 33%);
+  padding-top: 150px;
+}
 
-  input {
-    font-size: 1em;
-    border-radius: .25em;
-    font-style: italic;
-    margin: 20px;
-    min-height: 8vh;
-    word-wrap: normal;
-  }
-}
-#edit-form {
-  display: flex;
-  flex-direction: column;
-}
-#edit-line {
+.footer_links {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  margin: 50px;
 }
-#note-title {
-  border-style: solid;
-  background-color: rgba(128, 203, 196, .8);
-  margin: 0px;
-  padding: 0px;
+
+.footer_links ul {
+  list-style-type: none;
+  margin-left: 40px;
+  margin-right: 40px;
 }
-#note-body {
-  background-color: rgba(128, 203, 196, .8);
-  margin: 0px;
+
+.footer_links li a {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
 }
-#tags {
+
+.footer_links li a:hover {
+  color: rgba(255,255,255,0.9);
+}
+
+.footer_links li.footer_link_header {
+  color: rgba(255,255,255,1);
+  text-transform: uppercase;
+}
+
+.footer_links li.footer_link_header i {
+  display: none;
+}
+
+.footer_bottom {
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
   align-items: center;
-  background-color: rgba(128, 203, 196, .8);
-  margin: 0px;
-  h5 {
-    margin-right: 2vw;
-  }
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: rgba(20,20,20,1);
+  color: rgba(255,255,255,0.6);
 }
-#username {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  background-color: rgba(128, 203, 196, .8);
-  margin: 0px;
-  h5 {
-    margin-right: 2vw;
-  }
+
+.footer_bottom .title_font {
+  font-family: lobster;
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
 }
-#buttons {
-  background-color: rgba(128, 203, 196, .8);
-  i {
-    color: black;
-    padding-right: 2vw;
-  }
+
+.footer_bottom .title_font:hover {
+  color: white;
 }
-#sign-out-buttons {
+
+.footer_bottom li a {
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+}
+
+.footer_bottom li a:hover {
+  color: white;
+}
+
+.footer_bottom ul {
+  list-style-type: none;
+}
+
+.footer_bottom li {
+  display: inline;
+  padding-left: 10px;
+}
+
+/* Footer style for less than 790px */
+@media only screen and (max-width : 790px) {
+
+  .footer_links {
+    flex-direction: column;
+  }
+
+  .footer_links li {
+    display: none
+  }
+
+  .footer_links li.footer_link_header {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin: 10vw;
-  a {
-    text-decoration: none;
-    color: black;
-    padding-left: 2vw;
-    padding-right: 2vw;
-    padding-top: 1vh;
-    padding-bottom: 1vh;
-    border-color: black;
-    border-style: solid;
-    background-color: white;
-    margin: 1vh;
-    text-overflow: inherit;
-    font-size: 2.5vw;
+    justify-content: space-between;
+    cursor: pointer;
+    padding-bottom: 15px;
+    margin: 0;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
   }
-}
-#sign-out-content {
-  h2 {
-    background-color: rgba(128, 203, 196, .8);
+
+  .footer_links li.footer_link_header i {
+    display: inline;
   }
 }

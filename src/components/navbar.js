@@ -13,26 +13,17 @@ class NavBar extends Component {
 
   render() {
     return (
-      <div id="navbar">
-        <div>
-          <Link to="/">home</Link>
+      <nav>
+        <div className="title">
+          <Link to="/"><span className="emphasize">Watson</span> Nutrition</Link>
         </div>
-        <div>
-          <Link to="/posts/new">add meal</Link>
-        </div>
-        <div>
-          <Link to="/stats">my stats</Link>
-        </div>
-        <div>
-          <Link to="/signin">sign in</Link>
-        </div>
-        <div>
-          <Link to="/signup">sign up</Link>
-        </div>
-        <div>
-          <Link to="/signout">sign out</Link>
-        </div>
-      </div>
+        <ul>
+          <li><Link to="/about">About</Link></li>
+          <li><Link to="/locations">Locations</Link></li>
+          <li><Link to="/food">Food</Link></li>
+          <li className="li_sign_in"><Link to="/signin" className="sign_in">Sign in</Link></li>
+        </ul>
+      </nav>
     );
   }
 }
