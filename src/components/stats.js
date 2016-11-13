@@ -4,7 +4,6 @@ import * as actions from '../actions/';
 
 // const ROOT_URL = 'https://cs52-devinahw4.surge.sh';
 // const ROOT_URL = 'https://cs52-devinahw4.surge.sh';
-const SMS_KEY = '239jdsd48ajdsjccbxbncbc393948828139485754883jkbvdaaa';
 
 class Stats extends Component {
   constructor(props) {
@@ -16,7 +15,7 @@ class Stats extends Component {
   }
   componentWillMount() {
     // this.props.fetchPosts();
-    this.props.fetchMeals({ phone: '9178280824', smsKey: SMS_KEY });
+    this.props.fetchMeals();
   }
   listView() {
     if (this.props.meals) {
@@ -40,7 +39,8 @@ class Stats extends Component {
     return (
       <div>
         <div id="title">
-          <h1>Life of Devina</h1>
+          <h1>Statistics
+          </h1>
         </div>
         <div id="stats">
         Statistics for Today
@@ -58,7 +58,6 @@ const mapStateToProps = (state) => {
   console.log(state);
   return (
   {
-    posts: state.posts.all,
     foods: state.foods.all,
     meals: state.foods.meals.meals,
     nutrition: state.foods.meals,

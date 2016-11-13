@@ -17,6 +17,7 @@ class About extends Component {
     return (
       <div>
         <h1>About</h1>
+        <img alt="Analyze calories with Watson" src="src/pictures/CalorieDriver.png" />
       </div>
     );
   }

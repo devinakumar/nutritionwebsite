@@ -32,7 +32,7 @@ class SignIn extends Component {
     return (
       <div id="input-bar">
         <form>
-          <input placeholder="Email" onChange={this.onPhoneChange} value={this.state.phone} />
+          <input placeholder="Phone Number" onChange={this.onPhoneChange} value={this.state.phone} />
         </form>
         <form>
           <input placeholder="Password" onChange={this.onPasswordChange} value={this.state.password} />
