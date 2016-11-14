@@ -103,6 +103,16 @@ nav li a.sign_in:hover {
   text-align: center;
 }
 
+#dailytracking {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+#dailytracking li {
+  list-style-type: none;
+}
 .signup_button {
   text-align: center;
 }

@@ -4,14 +4,10 @@ import * as actions from '../actions/';
 import { Link } from 'react-router';
 import Highcharts from 'highcharts';
 import ReactHighcharts from 'react-highcharts';
+import SimpleTable from 'react-simple-table';
 
 require('highcharts/modules/exporting')(Highcharts);
 
-// const ROOT_URL = 'https://cs52-devinahw4.surge.sh';
-// const ROOT_URL = 'https://cs52-devinahw4.surge.sh';
-
-// const ROOT_URL = 'https://cs52-devinahw4.surge.sh';
-// const ROOT_URL = 'https://cs52-devinahw4.surge.sh';
 const DAILY_CALORIES = 2200;
 const DAILY_FAT = 65;
 const DAILY_PROTEIN = 50;
@@ -38,11 +34,30 @@ class Home extends Component {
     }
     return <li>loading</li>;
   }
+  // statsView() {
+  //   const nutrition = ['calories', 'totalFat', 'protein', 'totalCarb', 'sugar'];
+  //   return nutrition.map((stat) => {
+  //     return <li key={stat}>{stat}: {this.props.nutrition[stat]}</li>;
+  //   });
+  // }
   statsView() {
-    const nutrition = ['calories', 'totalFat', 'protein', 'totalCarb', 'sugar'];
-    return nutrition.map((stat) => {
-      return <li key={stat}>{stat}: {this.props.nutrition[stat]}</li>;
-    });
+    if (this.props.nutrition) {
+      const nutritionfacts = [{
+        Calories: this.props.nutrition.calories,
+        Fat: this.props.nutrition.totalFat,
+        Protein: this.props.nutrition.protein,
+        Carbohydrates: this.props.nutrition.totalCarb,
+        Sugar: this.props.nutrition.sugar,
+      }];
+      return (
+        <SimpleTable
+          columns={['Calories', 'Fat', 'Protein', 'Carbohydrates', 'Sugar']}
+          data={nutritionfacts}
+        />
+   );
+    } else {
+      return <div>Loading stats...</div>;
+    }
   }
   graphView() {
     if (this.props.nutrition) {
@@ -95,11 +110,6 @@ class Home extends Component {
           color: '#00008B',
         }],
       };
-    // userNutrition.series[0].data[0] = 10;
-    // userNutrition.series[0].data[1] = 20;
-    // userNutrition.series[0].data[2] = 30;
-    // userNutrition.series[0].data[3] = 40;
-    // userNutrition.series[0].data[4] = 50;
       return <ReactHighcharts config={userNutrition} />;
     } else {
       return <div>Loading graph...</div>;
@@ -112,12 +122,14 @@ class Home extends Component {
           <div id="title">
             <h1>Hey, there! You are on track for today.</h1>
           </div>
-          <div id="stats">
-          Statistics for Today
-            {this.statsView()}
-          </div>
-          <div id="listview">
-            {this.listView()}
+          <div id="dailytracking">
+            <div id="stats">
+            Statistics for Today
+              {this.statsView()}
+            </div>
+            <div id="listview">
+              {this.listView()}
+            </div>
           </div>
           <div>
             {this.graphView()}
