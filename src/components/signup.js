@@ -32,13 +32,13 @@ class SignUp extends Component {
     return (
       <div id="input-bar">
         <form>
-          <input placeholder="Email" onChange={this.onNewPhoneChange} value={this.state.phone} />
+          <input type="text" placeholder="Phone Number" onChange={this.onNewPhoneChange} value={this.state.phone} />
         </form>
         <form>
-          <input placeholder="Password" onChange={this.onNewPasswordChange} value={this.state.password} />
+          <input type="password" placeholder="Password" onChange={this.onNewPasswordChange} value={this.state.password} />
         </form>
         <form>
-          <input type="button" value="Sign Up!" onClick={this.onSignUp} />
+          <input type="button" value="Sign Up" onClick={this.onSignUp} />
         </form>
       </div>
     );

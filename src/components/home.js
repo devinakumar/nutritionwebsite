@@ -81,15 +81,15 @@ class Home extends Component {
           type: 'bar',
         },
         title: {
-          text: 'Your Nutrition',
+          text: '% of Total Daily Value',
         },
         xAxis: {
-          categories: ['calories', 'totalFat', 'protein', 'totalCarb', 'sugar'],
+          categories: ['Calories', 'Total Fat', 'Protein', 'Total Carbs', 'Sugar'],
         },
         yAxis: {
           min: 0,
           title: {
-            text: 'Percent of total daily value',
+            text: '',
           },
         },
         legend: {
@@ -118,41 +118,44 @@ class Home extends Component {
   render() {
     if (this.props.auth && this.props.auth.authenticated) {
       return (
-        <div>
+        <div id="content">
           <div id="title">
-            <h1>Hey, there! You are on track for today.</h1>
+            <h1>Daily Nutrition Summary</h1>
           </div>
           <div id="dailytracking">
             <div id="stats">
-            Statistics for Today
               {this.statsView()}
-            </div>
-            <div id="listview">
-              {this.listView()}
             </div>
           </div>
           <div>
             {this.graphView()}
           </div>
+          <div id="listview">
+            <p>Here's what you've eaten so far today:</p>
+            {this.listView()}
+          </div>
+          <br /><br /><br />
         </div>
       );
     } else {
       return (
-        <div>
+        <div id="content">
           <div id="slogan">
             Chat with Watson and eat healthier
           </div>
-          <div id="homepageCharts">
-            <div id="chart">
-              Graphic 1
-            </div>
-            <div id="chart">
-              Graphic 2
-            </div>
-            <div id="chart">
-              Graphic 3
-            </div>
+          <div id="imgCaption">
+            Talk to a Nutrition Assistant and learn about calories, carbohydrates, and more.
           </div>
+          <img id="chatImg" src="/src/pictures/chat.png" />
+          <div id="imgCaption">
+            Analyze your eating habits and pick the right foods.
+          </div>
+          <img id="fatImg" src="/src/pictures/totalFat.png" />
+          <div id="imgCaption">
+            Watson Analytics can help you live happier and healthier.
+          </div>
+          <img id="driversImg" src="/src/pictures/drivers.png" />
+
           <div className="signup_button">
             <Link to="/signup">Join Watson Nutrition</Link>
           </div>

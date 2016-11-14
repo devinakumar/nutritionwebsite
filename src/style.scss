@@ -1,11 +1,17 @@
 /* BODY, MAIN STYLE */
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
   position: relative;
-  background-color: rgba(0,0,0,0.2);
+  background-color: rgba(0,0,0,0);
+}
+
+#content {
+  padding-left: 50px;
+  padding-right: 50px;
+  text-align: center;
 }
 
 /* NAVIGATION BAR STYLE */
@@ -98,9 +104,43 @@ nav li a.sign_in:hover {
   padding-top: 50px;
 }
 
+#title {
+  font-family: verdana;
+  font-weight: normal;
+  font-size: 0.8em;
+  text-align: center
+}
+
+h1 {
+  font-weight: normal;
+}
+
 #chart {
-  width: 33%;
+  width: 50%;
   text-align: center;
+}
+
+#chatImg {
+  width: 300px;
+  text-align: center;
+}
+
+#fatImg {
+  width: 700px;
+}
+
+#driverImg {
+  width: 190px;
+}
+
+#imgCaption {
+  text-align: center;
+}
+
+img {
+  text-align: center;
+  padding: 40px;
+  padding-bottom: 60px;
 }
 
 #dailytracking {
@@ -115,9 +155,19 @@ nav li a.sign_in:hover {
 }
 .signup_button {
   text-align: center;
+  padding-top: 40px;
+}
+
+tr, th, td {
+  padding-right: 40px;
+}
+
+table {
+
 }
 
 .signup_button a {
+
   font-size: 1.6em;
   padding: 30px;
   font-family: sans-serif;
@@ -286,4 +336,31 @@ footer {
   .footer_links li.footer_link_header i {
     display: inline;
   }
+}
+
+
+#input-bar input[type=password],input[type=text]{
+  font-size: 1.4em;
+  padding: 10px;
+  margin: 15px;
+}
+
+#input-bar {
+  text-align: center;
+  padding: 40px;
+  font-size: 2em;
+}
+
+#input-bar input[type=button] {
+  background-color: rgba(20,40,255,0.6);
+  padding: 10px;
+  color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  font-size: 1.4em;
+}
+
+#input-bar input[type=button]:hover {
+  background-color: rgba(20,40,255,0.7);
+  cursor: pointer;
 }

@@ -19,7 +19,7 @@ class NavBar extends Component {
 
   render() {
     const signIn = (<ul><li><Link to="/signin" id="link">Login</Link></li></ul>);
-    const signOut = (<ul><li><Link to="#signout" onClick={() => { this.signOut(); }} id="link">Logout</Link></li></ul>);
+    const signOut = (<ul><li>Your Personal Assistant: Text (917) 900-1103</li><li><Link to="#signout" onClick={() => { this.signOut(); }} id="link">Logout</Link></li></ul>);
 
     let accountLinks;
     console.log('state is');
