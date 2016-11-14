@@ -44,10 +44,12 @@
   },
   "dependencies": {
     "axios": "^0.13.1",
+    "highcharts": "^5.0.2",
     "immutable": "^3.8.1",
     "marked": "^0.3.6",
-    "react": "^15.2.1",
+    "react": "^15.3.2",
     "react-dom": "^15.2.1",
+    "react-highcharts": "^11.0.0",
     "react-marked": "^0.3.1",
     "react-redux": "^4.4.5",
     "react-router": "^2.5.2",

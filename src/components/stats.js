@@ -1,9 +1,21 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions/';
+import Highcharts from 'highcharts';
+import ReactHighcharts from 'react-highcharts';
+
+require('highcharts/modules/exporting')(Highcharts);
 
 // const ROOT_URL = 'https://cs52-devinahw4.surge.sh';
 // const ROOT_URL = 'https://cs52-devinahw4.surge.sh';
+const config = {
+  xAxis: {
+    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+  },
+  series: [{
+    data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 295.6, 454.4],
+  }],
+};
 
 class Stats extends Component {
   constructor(props) {
@@ -21,6 +33,7 @@ class Stats extends Component {
     if (this.props.meals) {
       console.log(this.props.foods);
       console.log(this.props.nutrition);
+      console.log(config);
       return this.props.meals.map((meal) => {
         return <li key={meal.id}>{meal.foodName}</li>;
       });
@@ -48,6 +61,9 @@ class Stats extends Component {
         </div>
         <div id="listview">
           {this.listView()}
+        </div>
+        <div>
+          <ReactHighcharts config={config} />,
         </div>
       </div>
     );
